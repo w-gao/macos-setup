@@ -9,4 +9,21 @@ Created around March, 2021.
 
 ## Steps
 
-TBU
+### Pre-install
+
+- Install Git
+
+```
+xcode-select --install
+```
+
+- Install Homebrew
+
+https://brew.sh/
+
+#### Installation script
+
+
+#### Further customization
+
+
