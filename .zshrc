@@ -5,9 +5,9 @@
 # ------
 alias ls="ls -hG"
 
-export LSCOLORS="gxfxcxdxbxhxhxhxhxcxcx"
+export LSCOLORS="gxfxcxdxbxhxhxhxhxCxCx"
 # same as LSCOLORS, but for the tree command
-export LS_COLORS="di=36:ln=35:so=32:pi=33:ex=31:bd=37:cd=37:su=37:sg=37:tw=32:ow=32"
+export LS_COLORS="di=36:ln=35:so=32:pi=33:ex=31:bd=37:cd=37:su=37:sg=37:tw=1;32:ow=1;32"
 
 alias grep="grep --color=auto"
 alias tree="tree -C"
