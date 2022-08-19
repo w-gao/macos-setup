@@ -88,4 +88,22 @@ pip install jupyterlab
 pip install notebook
 ```
 
+## Set up web dev environment
+
+### Install Node.js
+
+https://nodejs.org/en/download/
+
+This will install `node` and `npm`
+
+### Install `yarn`
+
+If you need to use this as the package manager
+
+```shell
+npm install --global yarn
+```
+
+*NOTE*: This may need sudo permission
+
 
