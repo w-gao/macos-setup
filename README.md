@@ -50,30 +50,27 @@ brew install tree
 
 ## _(optional)_ Install Python
 
+Use `pyenv` to manage different Python versions. See: https://github.com/pyenv/pyenv#homebrew-in-macos
+
 ```shell
-brew install python
+brew update
+brew install pyenv
+```
 
-# install virtualenv
-brew install pipx
-pipx install virtualenv
+Create virtual environments
 
-# create environments
-# virtualenv ~/venv/toil_env -p 3.8
-# virtualenv ~/venv/binf_env -p 3.8
-# ...
+```shell
+python -m venv ~/venv/toil_env
+python -m venv ~/venv/binf_env
 ```
 
 
 Put this in the *Python* section in `~/.zshrc`
 
 ```shell
-# add to $PATH
-export PATH="$HOME/.local/bin:$PATH";
-export PATH="/usr/local/opt/python/libexec/bin:$PATH"
-
 # aliases
-alias toil_env="source ~/venv/toilenv/bin/activate"
-alias binf_env="source ~/venv/binf_env/bin/activate"
+alias toil_env=". ~/venv/toil_env/bin/activate"
+alias binf_env=". ~/venv/binf_env/bin/activate"
 # ...
 ```
 
@@ -88,7 +85,7 @@ pip install jupyterlab
 pip install notebook
 ```
 
-## Set up web dev environment
+## _(optional)_ Set up web dev environment
 
 ### Install Node.js
 
@@ -104,6 +101,6 @@ If you need to use this as the package manager
 npm install --global yarn
 ```
 
-*NOTE*: This may need sudo permission
+**NOTE**: This may require sudo permission
 
 
