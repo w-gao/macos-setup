@@ -104,3 +104,20 @@ npm install --global yarn
 **NOTE**: This may require sudo permission
 
 
+## _(optional)_ Install Java
+
+Following [this](https://stackoverflow.com/a/66891978), it looks like the best
+way to install Java on a Apple Silicon machine is through Homebrew.
+
+```
+brew install openjdk
+
+# then follow brew info openjdk:
+# let the system Java wrappers find it
+sudo ln -sfn /opt/homebrew/opt/openjdk/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk.jdk
+
+# add to PATH
+echo 'export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"' >> ~/.zshrc
+```
+
+
