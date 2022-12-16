@@ -1,7 +1,14 @@
+# wlgao's .zshrc template
+# Updated on Dec 15, 2022
 
 # zsh prompt ----------------------------------------------
 
 PROMPT='%F{cyan}%n%f %1~ %# '
+
+
+# zsh settings --------------------------------------------
+
+setopt +o nomatch
 
 
 # Colors --------------------------------------------------
@@ -20,8 +27,26 @@ export LESSHISTFILE=-
 
 # Python --------------------------------------------------
 
+# pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
 
-# frontend web development --------------------------------
+alias toil_env=". ~/venv/toil_env/bin/activate"
+alias bme205_env=". ~/venv/bme205_env/bin/activate"
+alias cse144_env=". ~/venv/cse144_env/bin/activate"
+alias ecnet_env=". ~/venv/ecnet_env/bin/activate"
 
 
+# JavaScript/TypeScript/Node.js ---------------------------
+
+
+# Java ----------------------------------------------------
+
+export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
+
+
+# Aliases -------------------------------------------------
+
+alias k=kubectl
 

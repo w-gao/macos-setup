@@ -3,7 +3,7 @@
 This repo contains scripts and files for William Gao to set up his macOS.
 
 
-Created around March, 2021. Updated on Aug 18, 2022.
+Created around March, 2021. Updated on Dec 15, 2022.
 
 
 ## System customization
@@ -29,7 +29,7 @@ git --version
 
 ```shell
 git config --global user.name "William Gao"
-git config --global user.email "XXX"
+git config --global user.email "me@wlgao.com"
 ```
 
 2. Set up SSH keys
@@ -37,14 +37,14 @@ git config --global user.email "XXX"
 
 ## Install Homebrew
 
-https://brew.sh/
+Install Homebrew by following the command here: https://brew.sh/
 
 
 ### Useful packages
 
 ```shell
 brew install tree
-
+brew install jq
 ```
 
 
@@ -64,8 +64,7 @@ python -m venv ~/venv/toil_env
 python -m venv ~/venv/binf_env
 ```
 
-
-Put this in the *Python* section in `~/.zshrc`
+Put this in the *Python* section in `~/.zshrc`:
 
 ```shell
 # aliases
@@ -77,31 +76,28 @@ alias binf_env=". ~/venv/binf_env/bin/activate"
 
 ### _(optional)_ Jupyter notebook
 
-```
-# activate binf env
+```shell
 binf_env
-
 pip install jupyterlab
 pip install notebook
 ```
 
-## _(optional)_ Set up web dev environment
+## _(optional)_ JavaScript/TypeScript
 
 ### Install Node.js
 
-https://nodejs.org/en/download/
-
-This will install `node` and `npm`
+Download and install Node.js here: https://nodejs.org/en/download/.
+This will install `node` and `npm`.
 
 ### Install `yarn`
 
-If you need to use this as the package manager
+If you prefer `yarn` as your package manager.
 
 ```shell
 npm install --global yarn
 ```
 
-**NOTE**: This may require sudo permission
+**NOTE**: This requires sudo permission.
 
 
 ## _(optional)_ Install Java
@@ -109,7 +105,8 @@ npm install --global yarn
 Following [this](https://stackoverflow.com/a/66891978), it looks like the best
 way to install Java on a Apple Silicon machine is through Homebrew.
 
-```
+```shell
+brew update
 brew install openjdk
 
 # then follow brew info openjdk:
@@ -118,6 +115,71 @@ sudo ln -sfn /opt/homebrew/opt/openjdk/libexec/openjdk.jdk /Library/Java/JavaVir
 
 # add to PATH
 echo 'export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"' >> ~/.zshrc
+```
+
+
+## _(optional)_ Docker
+
+Download Docker Desktop for Mac here: https://docs.docker.com/desktop/install/mac-install/
+
+
+Check installation:
+
+```shell
+docker --version
+```
+
+
+## _(optional)_ Kubernetes (k8s) client
+
+If you are working with k8s clusters, you probably need `kubectl`.
+
+### Install `kubectl`
+
+```shell
+brew update
+brew install kubectl
+```
+
+It may be a good idea to alias kubectl to `k`:
+
+```shell
+echo 'alias k=kubectl' >> ~/.zshrc
+. ~/.zshrc
+```
+
+### Configure `.kube/config`
+
+This depends on the k8s cluster setup.
+If working with multiple contexts, consider installing `kubectx` (and alias to `kx`) as well.
+
+
+Check installation/configuration:
+
+```shell
+k version
+```
+
+This should display the versions of the client and server.
+
+
+## _(optional)_ Kubernetes local cluster
+
+
+If you want to set up a local kubernetes cluster for development, consider using `minikube`:
+
+```shell
+brew update
+brew install minikube
+```
+
+**NOTE**: `minikube` needs a driver such as VirtualBox, hyperkit, or Docker. Docker works great.
+
+
+Check installation:
+
+```shell
+minikube version
 ```
 
 
