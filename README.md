@@ -14,13 +14,13 @@ Follow [this gist](https://gist.github.com/w-gao/ce9b03298e918c6d2e2e3d151aff2e9
 ## Install Developer Tools
 
 ```shell
-xcode-select --install
+$ xcode-select --install
 ```
 
 This also installs Git:
 
 ```shell
-git --version
+$ git --version
 ```
 
 ## Configure Git
@@ -28,8 +28,8 @@ git --version
 1. Set global identity config
 
 ```shell
-git config --global user.name "William Gao"
-git config --global user.email "me@wlgao.com"
+$ git config --global user.name "William Gao"
+$ git config --global user.email "me@wlgao.com"
 ```
 
 2. Set up SSH keys
@@ -43,8 +43,8 @@ Install Homebrew by following the command here: https://brew.sh/
 ### Useful packages
 
 ```shell
-brew install tree
-brew install jq
+$ brew install tree
+$ brew install jq
 ```
 
 
@@ -53,21 +53,20 @@ brew install jq
 Use `pyenv` to manage different Python versions. See: https://github.com/pyenv/pyenv#homebrew-in-macos
 
 ```shell
-brew update
-brew install pyenv
+$ brew update
+$ brew install pyenv
 ```
 
-Create virtual environments
+Create virtual environments:
 
 ```shell
-python -m venv ~/venv/toil_env
-python -m venv ~/venv/binf_env
+$ python -m venv ~/venv/toil_env
+$ python -m venv ~/venv/binf_env
 ```
 
 Put this in the *Python* section in `~/.zshrc`:
 
-```shell
-# aliases
+```
 alias toil_env=". ~/venv/toil_env/bin/activate"
 alias binf_env=". ~/venv/binf_env/bin/activate"
 # ...
@@ -77,9 +76,9 @@ alias binf_env=". ~/venv/binf_env/bin/activate"
 ### _(optional)_ Jupyter notebook
 
 ```shell
-binf_env
-pip install jupyterlab
-pip install notebook
+$ binf_env
+$ pip install jupyterlab
+$ pip install notebook
 ```
 
 ## _(optional)_ JavaScript/TypeScript
@@ -94,7 +93,7 @@ This will install `node` and `npm`.
 If you prefer `yarn` as your package manager.
 
 ```shell
-npm install --global yarn
+$ npm install --global yarn
 ```
 
 **NOTE**: This requires sudo permission.
@@ -106,15 +105,16 @@ Following [this](https://stackoverflow.com/a/66891978), it looks like the best
 way to install Java on a Apple Silicon machine is through Homebrew.
 
 ```shell
-brew update
-brew install openjdk
+$ brew update
+$ brew install openjdk
 
-# then follow brew info openjdk:
+# then follow `brew info openjdk`:
+
 # let the system Java wrappers find it
-sudo ln -sfn /opt/homebrew/opt/openjdk/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk.jdk
+$ sudo ln -sfn /opt/homebrew/opt/openjdk/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk.jdk
 
 # add to PATH
-echo 'export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"' >> ~/.zshrc
+$ echo 'export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"' >> ~/.zshrc
 ```
 
 
@@ -126,7 +126,7 @@ Download Docker Desktop for Mac here: https://docs.docker.com/desktop/install/ma
 Check installation:
 
 ```shell
-docker --version
+$ docker --version
 ```
 
 
@@ -137,18 +137,18 @@ If you are working with k8s clusters, you probably need `kubectl`.
 ### Install `kubectl`
 
 ```shell
-brew update
-brew install kubectl
+$ brew update
+$ brew install kubectl
 ```
 
 It may be a good idea to alias kubectl to `k`:
 
 ```shell
-echo 'alias k=kubectl' >> ~/.zshrc
-. ~/.zshrc
+$ echo 'alias k=kubectl' >> ~/.zshrc
+$ . ~/.zshrc
 ```
 
-### Configure `.kube/config`
+### Configure `~/.kube/config`
 
 This depends on the k8s cluster setup.
 If working with multiple contexts, consider installing `kubectx` (and alias to `kx`) as well.
@@ -157,7 +157,7 @@ If working with multiple contexts, consider installing `kubectx` (and alias to `
 Check installation/configuration:
 
 ```shell
-k version
+$ k version
 ```
 
 This should display the versions of the client and server.
@@ -169,8 +169,8 @@ This should display the versions of the client and server.
 If you want to set up a local kubernetes cluster for development, consider using `minikube`:
 
 ```shell
-brew update
-brew install minikube
+$ brew update
+$ brew install minikube
 ```
 
 **NOTE**: `minikube` needs a driver such as VirtualBox, hyperkit, or Docker. Docker works great.
@@ -179,7 +179,7 @@ brew install minikube
 Check installation:
 
 ```shell
-minikube version
+$ minikube version
 ```
 
 
