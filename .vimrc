@@ -11,8 +11,13 @@ set ruler
 set nowrap
 set autoindent
 
-"searching
+"always display status line
+set laststatus=2
+
+"searching (search while typing, ignore case except when upper case is present)
 set incsearch
+set ignorecase
+set smartcase
 
 "spaces > tabs
 set tabstop=4 softtabstop=4
@@ -28,6 +33,11 @@ augroup numbertoggle
     autocmd BufEnter,FocusGained,InsertLeave,WinEnter * if &nu && mode() != "i" | set rnu   | endif
     autocmd BufLeave,FocusLost,InsertEnter,WinLeave   * if &nu                  | set nornu | endif
 augroup END
+
+"open file in right and rbelow split
+set splitright
+set splitbelow
+
 
 "turn off bell sound
 set belloff=all

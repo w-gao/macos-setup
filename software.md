@@ -4,7 +4,6 @@ A list of software that I downloaded through the Internet.
 
 - Google Chrome
 - VS Code
-- Node.js
 - Spotify
 - Wechat
 - ~~Adobe CC~~ no
@@ -24,5 +23,9 @@ A list of software that I downloaded through the Internet.
 - ~~WireShark~~
 - Proxifier
 - calibre
-
+- Golang
+  - recommended to install through installer not brew
+- Parallels
+  - Ubuntu 22.04
+- Logi Options+
 

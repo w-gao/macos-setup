@@ -1,5 +1,7 @@
 # wlgao's .zshrc template
 # Updated on Dec 15, 2022
+# Updated on Feb 08, 2023
+
 
 # zsh prompt ----------------------------------------------
 
@@ -38,8 +40,12 @@ alias cse144_env=". ~/venv/cse144_env/bin/activate"
 alias ecnet_env=". ~/venv/ecnet_env/bin/activate"
 
 
-# JavaScript/TypeScript/Node.js ---------------------------
+# frontend web development --------------------------------
 
+
+# Golang --------------------------------------------------
+
+export PATH=~/go/bin:$PATH
 
 # Java ----------------------------------------------------
 
@@ -49,4 +55,9 @@ export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
 # Aliases -------------------------------------------------
 
 alias k=kubectl
+
+
+# Docker --------------------------------------------------
+
+export TOIL_DOCKER_REGISTRY=quay.io/wlgao
 
