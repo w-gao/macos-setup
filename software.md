@@ -28,4 +28,6 @@ A list of software that I downloaded through the Internet.
 - Parallels
   - Ubuntu 22.04
 - Logi Options+
+- Android Studio
+- IntelliJ IDEA
 
